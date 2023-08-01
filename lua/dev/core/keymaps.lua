@@ -38,11 +38,11 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 keymap.set("x", "<leader>p", [["_dP]])
 
 -- Copies yank to system clipboard
-keymap.set({"n", "v"}, "<leader>y", [["+y]])
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Delete to void
-keymap.set({"n", "v"}, "<leader>d", [["_d]])
+keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Quickfix navigation
 keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
@@ -55,6 +55,19 @@ keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 
 -- Marks current file as executable
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+----------------------
+-- Tabbing
+----------------------
+-- New Tab
+keymap.set("n", "<leader><tab>", ":tabnew<CR>")
+
+-- Cycle to next tab
+keymap.set("n", "<tab>", ":tabnext<CR>")
+
+-- Cycle to previous tab
+-- Note: Can't remap Shift alone, need to combine with other key like: <S-key>
+keymap.set("n", "<S-tab>", ":tabprev<CR>")
 
 ----------------------
 -- Plugin Keybinds
